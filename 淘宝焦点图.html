@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝焦点图</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.tb-promo{
+			position: relative;
+			width:520px;
+			height: 280px;
+			background-color: pink;
+			margin: 20px auto;
+		}
+		.tb-promo img{
+			width: 100%;
+		}
+		/*并集选择器可以集体声明相同的样式*/
+		.prev,.post{
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			width: 20px;
+			height: 30px;
+			background: rgba(0,0,0,0.2);
+			text-align: center;
+			line-height: 30px;
+			font-size: 20px;
+			color: #fff;
+			text-decoration: none;
+
+		}
+		.prev{
+			left: 0;			
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+		}
+		.post{
+			/*如果一个盒子既有Left属性也有right属性，会默认执行left属性.*/
+			right: 0;
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+		}
+		.pro-nav{
+			position: absolute;
+			bottom: 15px;
+			left: 50%;
+			margin-left: -35px;
+			width: 70px;
+			height: 13px;
+			background:rgba(255,255,255,0.3);
+			border-radius: 7px;
+		}
+		li{
+			list-style: none;
+		}
+		.pro-nav li{
+			float: left;
+			width: 8px;
+			height: 8px;
+			background-color: #fff;
+			border-radius: 50%;
+			margin: 3px;
+		}
+/*		.pro-nav li:hover{
+			background-color: #ff5000;
+		}*/
+		.pro-nav .select{
+			background-color: #ff5000;
+		}
+	</style>
+</head>
+<body>
+	<!-- 1）大盒子命名为tb-promo,2)里面放图片；3）左右两个按钮用链接；4）底侧圆点用ul -->
+	<div class="tb-promo">
+		<img src="https://img.alicdn.com/tfs/TB1rFxzFrH1gK0jSZFwXXc7aXXa-520-280.jpg_q90_.webp" alt="">
+		<a href="#" class="prev">&lt;</a>
+		<a href="#" class="post">&gt;</a>
+		<ul class="pro-nav">
+			<li class="select"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

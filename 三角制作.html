@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三角制作</title>
+	<style>
+		.box1{
+			width: 0;
+			height: 0;
+			border-top: 10px solid pink;
+			border-right: 10px solid red;
+			border-bottom: 10px solid green;
+			border-left: 10px solid blue;
+		}
+		.box2{
+			width: 0;
+			height:0;
+			border-top: 50px solid pink;/*三角大小取决于边框粗细*/
+			border-right: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-left: 50px solid transparent;
+/*			为了兼容性，有时会加上以下两句话
+			font-size: 0;
+			line-height: 0;*/
+		}
+
+		
+		.jd{
+			position: relative;
+			width: 120px;
+			height: 120px;
+			background-color: gray;
+		}
+		.jd span{
+			position: absolute;
+			left:50px;
+			top: -20px;
+			width: 0;
+			height: 0;
+			border-top: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid gray;
+			border-left: 10px solid transparent;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<br>
+	<!-- 向下的三角 -->
+	<div class="box2"></div>
+
+
+	<!-- 京东案例 -->
+	<div class="jd"><span></span></div>
+</body>
+</html>

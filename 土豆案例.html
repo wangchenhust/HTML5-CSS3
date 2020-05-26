@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>土豆</title>
+	<style>
+		.box{
+			position: relative;
+			width: 444px;
+			height: 252px;
+			margin: 30px auto;
+			background-color: pink;
+		}
+		.mask{
+			position: absolute;
+			display: none;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.45) url(img/vedio.png) no-repeat center;
+		}
+		/*当鼠标经过box盒子时，就让里面的遮罩层显示出来，所以要注明是让mask显示:.box:hover .mask*/
+		.box:hover .mask{
+			display: block;
+		}
+		.box img{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- 核心原理：原先黑色半透明的盒子遮盖看不见，鼠标经过大盒子就显示出来了 -->
+	<!-- 遮盖的盒子不占有位置，需要用绝对定位和dispaly配合 -->
+	<div class="box">
+		<div class="mask"></div>
+		<img src="https://r1.ykimg.com/050C00005E872CA81B6A8D09B30C0217" alt="">
+	</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			height:1500px;
+		}
+		.box1{
+			width: 100px;
+			height: 80px;
+			background-color: #ff0;
+			position: relative;
+			top: 100px;
+			left: 500px;
+		}
+		.hezi{
+			position: absolute;
+			left: 10px;
+			bottom: 0px;
+			width: 40px;
+			height: 40px;
+			background-color: green;
+		}
+		.box2{
+			position: absolute;
+			left: 50px;
+			width: 150px;
+			height: 150px;
+			background-color: lightblue;
+		}
+		.box3{
+			position: absolute;
+			top: 10px;
+			left: 30px;
+			width: 100px;
+			height: 80px;
+			background-color: pink;
+		}
+		.box4{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+		}
+		.dj{
+			position: fixed;
+			top: 200px;
+			right: 0px;
+			width: 50px;
+			height: 50px;
+			background-color: gray;
+		}
+		.banxin{
+			margin: 0 auto;
+			width: 800px;
+			height: 500px;
+			background-color: #fdecdc;
+		}
+		.logo{
+			position: fixed;
+			top:0;
+			left: 50%;
+			margin-left: 400px;
+			width: 30px;
+			height: 30px;
+			background-color: #8e61d0;
+		}
+		.nav{
+			position: sticky;
+			top:20px;
+			margin: 0 auto;
+			width: 600px;
+			height: 30px;
+			background-color: #8ea4d0;
+		}
+		.a1{
+			position: absolute;
+			width: 30px;
+			height: 20px;
+			background-color: #8161d0;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- #####1.绝对定位与相对定位一起使用##### -->
+
+	<!-- box1盒子是相对于自己原来的位置而言移动，原来就是在浏览器的第一个位置 -->
+	<div class="box1">
+		<!-- ​子绝定位：子级使用​绝对定位，父级则需要相对定位 -->
+		<div class="hezi"></div>
+	</div>
+
+
+	<!-- #####2.具有两级父元素的盒子如何定位，以及通过box4观察absolute是否占有位置##### -->
+
+	<!-- box2若不设定position:absolute，则位置是在box1的下方一行，尽管box1已经移动到别的位置，但是位置仍保留，不脱标 -->
+	 <!-- box2若设定position:absolute；left: 50px;则位置是相对浏览器而言，但此时box1仍然保留原来的位置，box2只能是在box1原来位置的下方进行移动。-->
+	<div class="box2">
+		<div class="box3">
+			<!-- hezi的位置以box3为参考点 -->
+			<div class="hezi"></div>
+		</div>
+	</div>
+	<!-- box2因为设定了position:absolute;脱标了，box4占有了box2的位置 -->
+	<div class="box4"></div>
+	
+
+	<!-- #####3.普通固定定位在可视窗口最右侧#### -->
+	<div class="dj"></div>
+
+
+	<!-- #####4.将固定定位在版心的右侧如何操作###### -->
+	<div class="banxin"></div>
+	<div class="logo"></div>
+
+
+	<!-- #####5.粘性定位##### -->
+	<!-- 直到滚动条将窗口拉到nav处才固定在窗口某个位置不动 -->
+	<div class="nav"></div>
+
+
+	<!-- 绝对定位（固定定位）会完全压住盒子 -->
+	<div class="a1"></div>
+	<p>have a good day!</p>
+</body>
+</html>
